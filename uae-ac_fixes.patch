@@ -1,6 +1,6 @@
---- uae-0.8.16/configure.in~	Mon Feb 19 22:59:48 2001
-+++ uae-0.8.16/configure.in	Thu Sep 20 06:10:58 2001
-@@ -31,9 +31,9 @@
+--- uae-0.8.22/configure.in.orig	Sat Feb 15 23:55:14 2003
++++ uae-0.8.22/configure.in	Sat Feb 15 23:58:01 2003
+@@ -32,9 +32,9 @@
  ], [uae_cv_prog_cc_watcom=yes], [uae_cv_prog_cc_watcom=no])
  AC_MSG_RESULT($uae_cv_prog_cc_watcom)
  
@@ -13,19 +13,19 @@
  
  NR_WARNINGS=0
  NR_ERRORS=0
-@@ -45,11 +45,6 @@
+@@ -46,11 +46,6 @@
  
  NEED_THREAD_SUPPORT=no
  
 -ADDITIONAL_CFLAGS=
 -OPTIMIZE_CFLAGS=
 -WARNING_CFLAGS=
--DEBUG_CFLAGS=-g
+-DEBUG_CFLAGS=
 -NO_SCHED_CFLAGS=
  LDFLAGS="$LDFLAGS -L."
  
  dnl Checks for libraries.
-@@ -536,26 +531,7 @@
+@@ -596,26 +591,7 @@
  ], [AC_MSG_RESULT(yes); HAVEGLIBC2=yes], AC_MSG_RESULT(no))
  fi
  
