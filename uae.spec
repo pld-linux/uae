@@ -39,9 +39,9 @@ ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 
 %build
 %{__libtoolize}
-aclocal -I %{_aclocaldir}/gnome
+%{__aclocal} -I %{_aclocaldir}/gnome
 %{__autoconf}
-automake -a -c || :
+%{__automake} || :
 %configure \
 	--with-x \
 	--enable-sound \
