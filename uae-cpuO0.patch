@@ -1,11 +1,11 @@
---- uae-0.8.22/src/Makefile.in~	Sat Mar 29 16:09:28 2003
-+++ uae-0.8.22/src/Makefile.in	Sat Mar 29 16:09:28 2003
-@@ -121,7 +121,7 @@
- cputbl.h: cpuemu.c
+--- uae-0.8.22/src/Makefile.in~	Sat Mar 29 16:39:38 2003
++++ uae-0.8.22/src/Makefile.in	Sat Mar 29 16:39:38 2003
+@@ -122,7 +122,7 @@
  
  cpufast.s: cpuemu.c tools/cpuopti
--	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) $< -o cputmp.s
-+	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) -O0 $< -o cputmp.s
- 	./tools/cpuopti <cputmp.s >$@
+ 	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) $< -o cputmp.s
+-	./tools/cpuopti <cputmp.s >$@
++	cp cputmp.s $@
  	rm cputmp.s
  
+ console_missing.o: missing.c
