@@ -5,8 +5,6 @@ Version:	0.8.16
 Release:	2
 License:	GPL
 Group:		Applications/Emulators
-Group(de):	Applikationen/Emulators
-Group(pl):	Aplikacje/Emulatory
 Source0:	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
 URL:		http://www.freiburg.linux.de/~uae/
