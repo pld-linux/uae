@@ -14,7 +14,6 @@ BuildRequires:	gtk+-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 UAE is mostly complete software emulation of the hardware of the
