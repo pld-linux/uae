@@ -56,7 +56,7 @@ ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-install {readdisk,uae} $RPM_BUILD_ROOT%{_bindir}
+install readdisk uae $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -65,4 +65,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc docs/{COMPATIBILITY,CREDITS,FAQ,NEWS,README}
 %attr(755,root,root) %{_bindir}/readdisk
-%attr(755,root,root) %{_bindir}/uae
+%attr(755,root,root) %{_bindir}/%{name}
