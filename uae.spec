@@ -30,7 +30,7 @@ UAE jest w wiêkszo¶ci kompletnym oprogramowaniem do emulacji Commodore
 Amiga 500/1000/2000. Commodore Amiga jest 16/32 bitowym komputerem
 bazuj±cym na procesorze Motorola 680x0 i kilku specjalnie
 zaprojektowanych ko¶ciach oferuj±cych bardzo dobr± grafikê i muzykê.
-UAE jest napisany dla systemów uniksowych; jest rozwijany pod linuksem
+UAE jest napisany dla systemów uniksowych; jest rozwijany pod Linuksem
 ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 
 %prep
