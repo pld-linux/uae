@@ -38,7 +38,7 @@ ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 %patch0 -p1
 
 %build
-libtoolize --copy --force
+%{__libtoolize}
 aclocal -I %{_aclocaldir}/gnome
 %{__autoconf}
 automake -a -c || :
