@@ -61,13 +61,11 @@ install -d $RPM_BUILD_ROOT/%{_bindir}
 
 install {readdisk,uae} $RPM_BUILD_ROOT/%{_bindir}
 
-gzip -9nf docs/{COMPATIBILITY,CREDITS,FAQ,NEWS,README}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/*.gz
+%doc docs/{COMPATIBILITY,CREDITS,FAQ,NEWS,README}
 %attr(0755,root,root) %{_bindir}/readdisk
 %attr(0755,root,root) %{_bindir}/uae
