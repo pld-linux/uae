@@ -70,4 +70,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc docs/*.gz
 %attr(0755,root,root) %{_bindir}/readdisk
-%attr(4755,root,root) %{_bindir}/uae
+%attr(0755,root,root) %{_bindir}/uae
