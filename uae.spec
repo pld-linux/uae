@@ -2,7 +2,7 @@ Summary:	Unix Amiga Emulator
 Summary(pl):	Unixowy Emulator Amigi
 Name:		uae
 Version:	0.8.16
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Emulators
 Group(pl):	Aplikacje/Emulatory
@@ -37,7 +37,7 @@ Program ma SUID!
 %setup -q
 
 %build
-%configure \
+%configure2_13 \
 	--with-x \
 	--enable-dga \
 	--enable-vidmode \
