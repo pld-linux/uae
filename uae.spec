@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Emulators
 Source0:	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/%{name}-%{version}.tar.gz
+# Source0-md5:	f3d1d0fabf6fa626dc531687cb2bb94d
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-cpuO0.patch
 URL:		http://www.freiburg.linux.de/~uae/
