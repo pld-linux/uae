@@ -16,7 +16,6 @@ BuildRequires:	gtk+-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 UAE is mostly complete software emulation of the hardware of the
 Commodore Amiga 500/1000/2000. A Commodore Amiga is a 16/32 bit
@@ -55,9 +54,9 @@ ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_bindir}
+install -d $RPM_BUILD_ROOT%{_bindir}
 
-install {readdisk,uae} $RPM_BUILD_ROOT/%{_bindir}
+install {readdisk,uae} $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -65,5 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc docs/{COMPATIBILITY,CREDITS,FAQ,NEWS,README}
-%attr(0755,root,root) %{_bindir}/readdisk
-%attr(0755,root,root) %{_bindir}/uae
+%attr(755,root,root) %{_bindir}/readdisk
+%attr(755,root,root) %{_bindir}/uae
