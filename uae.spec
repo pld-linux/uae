@@ -1,7 +1,7 @@
 Summary:	Unix Amiga Emulator
 Summary(pl):	Unixowy Emulator Amigi
 Name:		uae
-Version:	0.8.15
+Version:	0.8.16
 Release:	1
 License:	GPL
 Group:		Applications/Emulators
