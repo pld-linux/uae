@@ -25,8 +25,6 @@ capabilities. UAE is written for Unixish systems; it is developed on a
 Linux machine but it should compile and run on any half-recent
 Unix-like operating system.
 
-This program have SUID!
-
 %description -l pl
 UAE jest w wiêkszo¶ci kompletnym oprogramowaniem do emulacji Commodore
 Amiga 500/1000/2000. Commodore Amiga jest 16/32 bitowym komputerem
@@ -34,8 +32,6 @@ bazuj±cym na procesorze Motorola 680x0 i kilku specjalnie
 zaprojektowanych ko¶ciach oferuj±cych bardzo dobr± grafikê i muzykê.
 UAE jest napisany dla systemów uniksowych; jest rozwijany pod linuksem
 ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
-
-Program ma SUID!
 
 %prep
 %setup -q
