@@ -44,7 +44,7 @@ Program ma SUID!
 %build
 libtoolize --copy --force
 aclocal -I %{_aclocaldir}/gnome
-autoconf
+%{__autoconf}
 automake -a -c || :
 %configure \
 	--with-x \
