@@ -2,11 +2,12 @@ Summary:	Unix Amiga Emulator
 Summary(pl):	Unixowy Emulator Amigi
 Name:		uae
 Version:	0.8.22
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Emulators
 Source0:	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
+Patch1:		%{name}-cpuO0.patch
 URL:		http://www.freiburg.linux.de/~uae/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -35,6 +36,7 @@ ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
