@@ -1,15 +1,17 @@
 Summary:	Unix Amiga Emulator
 Summary(pl):	Uniksowy Emulator Amigi
 Name:		uae
-Version:	0.8.22
-Release:	3
+Version:	0.8.25
+Release:	1
 License:	GPL
 Group:		Applications/Emulators
 Source0:	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/%{name}-%{version}.tar.gz
-# Source0-md5:	f3d1d0fabf6fa626dc531687cb2bb94d
+# Source0-md5:	e660ca2bec3c016c978ef88117b0c432
+Source1:	%{name}.desktop
+Source2:	%{name}.png
 Patch0:		%{name}-ac_fixes.patch
-Patch1:		%{name}-cpuO0.patch
 URL:		http://www.freiburg.linux.de/~uae/
+BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+-devel
@@ -36,7 +38,6 @@ ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__libtoolize}
@@ -44,19 +45,28 @@ ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 %{__autoconf}
 %{__automake} || :
 %configure \
-	--with-x \
-	--enable-sound \
-	--enable-dga \
-	--enable-vidmode \
-	--enable-ui \
-	--enable-threads
+	--enable-dga		\
+	--enable-vidmode	\
+	--enable-ui		\
+	--enable-threads	\
+	--disable-file-sound	\
+	--with-x		\
+	--without-svgalib	\
+	--without-sdl		\
+	--without-sdl-sound	\
+	--without-sdl-gfx	\
+	--with-alsa		\
+	--without-asciiart
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_pixmapsdir},%{_desktopdir}}
 
 install readdisk uae $RPM_BUILD_ROOT%{_bindir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -66,3 +76,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/{COMPATIBILITY,CREDITS,FAQ,NEWS,README}
 %attr(755,root,root) %{_bindir}/readdisk
 %attr(755,root,root) %{_bindir}/%{name}
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.png
