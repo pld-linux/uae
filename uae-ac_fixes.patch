@@ -1,19 +1,7 @@
---- uae-0.8.22/configure.in.orig	Sat Feb 15 23:55:14 2003
-+++ uae-0.8.22/configure.in	Sat Feb 15 23:58:01 2003
-@@ -32,9 +32,9 @@
- ], [uae_cv_prog_cc_watcom=yes], [uae_cv_prog_cc_watcom=no])
- AC_MSG_RESULT($uae_cv_prog_cc_watcom)
- 
--AM_CYGWIN32
--AM_MINGW32
--AM_EXEEXT
-+AC_CYGWIN32
-+AC_MINGW32
-+AC_EXEEXT
- 
- NR_WARNINGS=0
- NR_ERRORS=0
-@@ -46,11 +46,6 @@
+diff -ur uae-0.8.25.orig/configure.in uae-0.8.25/configure.in
+--- uae-0.8.25.orig/configure.in	2005-07-01 15:00:17.000000000 +0200
++++ uae-0.8.25/configure.in	2006-01-12 14:30:50.004955500 +0100
+@@ -56,12 +56,6 @@
  
  NEED_THREAD_SUPPORT=no
  
@@ -22,14 +10,15 @@
 -WARNING_CFLAGS=
 -DEBUG_CFLAGS=
 -NO_SCHED_CFLAGS=
+-NO_REORDER_CFLAGS=
  LDFLAGS="$LDFLAGS -L."
  
  dnl Checks for libraries.
-@@ -596,26 +591,7 @@
+@@ -615,26 +609,7 @@
  ], [AC_MSG_RESULT(yes); HAVEGLIBC2=yes], AC_MSG_RESULT(no))
  fi
  
--if test $ac_cv_prog_gcc = yes; then
+-if test $ac_cv_c_compiler_gnu = yes; then
 -  WARNING_CFLAGS="-Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes"
 -  OPTIMIZE_CFLAGS="-O2 -fomit-frame-pointer"
 -  dnl Not nice, but needed to turn off -g
