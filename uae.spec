@@ -10,10 +10,12 @@ Source0:	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/%{name}-%{version}.
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-ac_fixes.patch
+Patch1:		%{name}-snd_file_fix.patch
 URL:		http://www.freiburg.linux.de/~uae/
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -38,6 +40,7 @@ ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
@@ -49,7 +52,7 @@ ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 	--enable-vidmode	\
 	--enable-ui		\
 	--enable-threads	\
-	--disable-file-sound	\
+	--enable-file-sound	\
 	--with-x		\
 	--without-svgalib	\
 	--without-sdl		\
