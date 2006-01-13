@@ -52,7 +52,7 @@ ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
 	--enable-vidmode	\
 	--enable-ui		\
 	--enable-threads	\
-	--enable-file-sound	\
+	--disable-file-sound	\
 	--with-x		\
 	--without-svgalib	\
 	--without-sdl		\
