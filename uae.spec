@@ -1,5 +1,5 @@
 Summary:	Unix Amiga Emulator
-Summary(pl.UTF-8):   Uniksowy Emulator Amigi
+Summary(pl.UTF-8):	Uniksowy Emulator Amigi
 Name:		uae
 Version:	0.8.25
 Release:	1
