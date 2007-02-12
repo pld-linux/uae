@@ -1,5 +1,5 @@
 Summary:	Unix Amiga Emulator
-Summary(pl):	Uniksowy Emulator Amigi
+Summary(pl.UTF-8):   Uniksowy Emulator Amigi
 Name:		uae
 Version:	0.8.25
 Release:	1
@@ -29,13 +29,13 @@ capabilities. UAE is written for Unixish systems; it is developed on a
 Linux machine but it should compile and run on any half-recent
 Unix-like operating system.
 
-%description -l pl
-UAE jest w wiêkszo¶ci kompletnym oprogramowaniem do emulacji Commodore
+%description -l pl.UTF-8
+UAE jest w wiÄ™kszoÅ›ci kompletnym oprogramowaniem do emulacji Commodore
 Amiga 500/1000/2000. Commodore Amiga jest 16/32 bitowym komputerem
-bazuj±cym na procesorze Motorola 680x0 i kilku specjalnie
-zaprojektowanych ko¶ciach oferuj±cych bardzo dobr± grafikê i muzykê.
-UAE jest napisany dla systemów uniksowych; jest rozwijany pod Linuksem
-ale powinien siê kompilowaæ na wiêkszo¶ci platformach uniksowych.
+bazujÄ…cym na procesorze Motorola 680x0 i kilku specjalnie
+zaprojektowanych koÅ›ciach oferujÄ…cych bardzo dobrÄ… grafikÄ™ i muzykÄ™.
+UAE jest napisany dla systemÃ³w uniksowych; jest rozwijany pod Linuksem
+ale powinien siÄ™ kompilowaÄ‡ na wiÄ™kszoÅ›ci platformach uniksowych.
 
 %prep
 %setup -q
