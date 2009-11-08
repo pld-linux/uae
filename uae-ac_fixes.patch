@@ -1,7 +1,7 @@
 diff -ur uae-0.8.25.orig/configure.in uae-0.8.25/configure.in
 --- uae-0.8.25.orig/configure.in	2005-07-01 15:00:17.000000000 +0200
 +++ uae-0.8.25/configure.in	2006-01-12 14:30:50.004955500 +0100
-@@ -56,12 +56,6 @@
+@@ -57,12 +57,6 @@
  
  NEED_THREAD_SUPPORT=no
  
@@ -14,31 +14,21 @@ diff -ur uae-0.8.25.orig/configure.in uae-0.8.25/configure.in
  LDFLAGS="$LDFLAGS -L."
  
  dnl Checks for libraries.
-@@ -615,26 +609,7 @@
- ], [AC_MSG_RESULT(yes); HAVEGLIBC2=yes], AC_MSG_RESULT(no))
- fi
- 
--if test $ac_cv_c_compiler_gnu = yes; then
--  WARNING_CFLAGS="-Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes"
--  OPTIMIZE_CFLAGS="-O2 -fomit-frame-pointer"
+@@ -670,8 +664,6 @@
+ if test $ac_cv_c_compiler_gnu = yes; then
+   WARNING_CFLAGS="-Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes"
+   OPTIMIZE_CFLAGS="-O2 -fomit-frame-pointer"
 -  dnl Not nice, but needed to turn off -g
 -  CFLAGS=
--fi
--
--if [[ "x$DO_PROFILING" = "xyes" ]]; then
--  if [[ "x$CC" = "xgcc" ]]; then
--    OPTIMIZE_CFLAGS="-O"
--    DEBUG_CFLAGS="-g -fno-inline -fno-omit-frame-pointer -pg -DUSE_PROFILING"
--    LDFLAGS="-pg"
--  else
--    DO_PROFILING=no
--    echo "Don't know how to set up profiling for your compiler."
--    NR_ERRORS=`expr $NR_ERRORS + 1`
--  fi
--fi
--
--CFLAGS="$OPTIMIZE_CFLAGS $DEBUG_CFLAGS $WARNING_CFLAGS $CFLAGS $ADDITIONAL_CFLAGS"
-+CFLAGS="$CFLAGS $CFLAGS $ADDITIONAL_CFLAGS"
+ fi
  
- if [[ "x$HAVEGCC27" = "xyes" ]]; then
-   CFLAGS="$CFLAGS -DGCCCONSTFUNC=\"__attribute__((const))\""
+ if [[ "x$DO_PROFILING" = "xyes" ]]; then
+@@ -686,7 +678,7 @@
+   fi
+ fi
+ 
+-CFLAGS="$OPTIMIZE_CFLAGS $DEBUG_CFLAGS $WARNING_CFLAGS $CFLAGS $ADDITIONAL_CFLAGS"
++CFLAGS="$DEBUG_CFLAGS $WARNING_CFLAGS $CFLAGS $ADDITIONAL_CFLAGS"
+ 
+ if test $ac_cv_prog_gcc = yes; then
+   if test $HAVEGCC27 != yes; then
