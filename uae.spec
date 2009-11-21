@@ -18,8 +18,9 @@ URL:		http://www.amigaemulator.org/
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+-devel
+BuildRequires:	gtk+2-devel >= 2.4.0
 BuildRequires:	libtool
+BuildRequires:	pkg-config
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
