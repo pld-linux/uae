@@ -21,6 +21,7 @@ BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,6 +48,7 @@ ale powinien się kompilować na większości platformach uniksowych.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+sed -e 's/build68kc/build68k/' -i src/Makefile.in
 
 %build
 %{__libtoolize}
