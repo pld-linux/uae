@@ -1,0 +1,42 @@
+--- uae-0.8.29/src/cfgfile.c~	2008-11-30 02:18:27.000000000 +0100
++++ uae-0.8.29/src/cfgfile.c	2014-01-22 19:39:52.109043770 +0100
+@@ -241,7 +241,7 @@
+ 		sprintf (tmp2, "mouse%d", v - JSEM_MICE);
+ 	}
+ 	sprintf (tmp1, "joyport%d=%s\n", i, tmp2);
+-	cfgfile_write (f, tmp1);
++	cfgfile_write (f, "%s", tmp1);
+     }
+ 
+     cfgfile_write (f, "bsdsocket_emu=%s\n", p->socket_emu ? "true" : "false");
+--- uae-0.8.29/src/gui-gtk/gtkui.c~	2008-11-30 02:18:27.000000000 +0100
++++ uae-0.8.29/src/gui-gtk/gtkui.c	2014-01-22 19:47:25.142373825 +0100
+@@ -263,7 +263,7 @@
+     if (gui_available)
+ 	do_message_box (NULL, msg, TRUE, TRUE);
+ 
+-    write_log (msg);
++    write_log ("%s", msg);
+ }
+ 
+ /* Config save/load.  */
+--- uae-0.8.29/src/debug.c~	2008-11-30 02:18:27.000000000 +0100
++++ uae-0.8.29/src/debug.c	2014-01-22 19:48:14.752373465 +0100
+@@ -101,7 +101,7 @@
+ 
+ static void debug_help (void)
+ {
+-    console_out (help);
++    console_out ("%s", help);
+ }
+ 
+ 
+@@ -215,7 +215,7 @@
+ 	}
+ 	line[9 + cols * 5] = ' ';
+ 	line[9 + cols * 5 + 1 + 2 * cols] = 0;
+-	console_out (line);
++	console_out ("%s", line);
+ 	console_out ("\n");
+     }
+     *nxmem = addr;

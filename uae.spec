@@ -2,7 +2,7 @@ Summary:	Unix Amiga Emulator
 Summary(pl.UTF-8):	Uniksowy Emulator Amigi
 Name:		uae
 Version:	0.8.29
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Emulators
 Source0:	http://www.amigaemulator.org/files/sources/develop/%{name}-%{version}.tar.bz2
@@ -14,6 +14,8 @@ Patch1:		%{name}-allow_spaces_in_zip_filenames.patch
 Patch2:		%{name}-preserve_home_in_writing_optionsfile.patch
 Patch3:		%{name}-struct_uae_wrong_fields_name.patch
 Patch4:		%{name}-uae_reset_args.patch
+Patch5:		format-security.patch
+Patch6:		xvidmode.patch
 URL:		http://www.amigaemulator.org/
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
@@ -48,6 +50,8 @@ ale powinien się kompilować na większości platformach uniksowych.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
+%patch6 -p0
 sed -e 's/build68kc/build68k/' -i src/Makefile.in
 
 %build
