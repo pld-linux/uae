@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Uniksowy Emulator Amigi
 Name:		uae
 Version:	0.8.29
 Release:	2
-License:	GPL
+License:	GPL v2
 Group:		Applications/Emulators
 Source0:	http://www.amigaemulator.org/files/sources/develop/%{name}-%{version}.tar.bz2
 # Source0-md5:	54abbabb5e8580b679c52de019141d61
@@ -18,12 +18,17 @@ Patch5:		format-security.patch
 Patch6:		xvidmode.patch
 URL:		http://www.amigaemulator.org/
 BuildRequires:	alsa-lib-devel
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
+BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libXxf86dga-devel
+BuildRequires:	xorg-lib-libXxf86vm-devel
+Requires:	gtk+2 >= 2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,6 +57,7 @@ ale powinien się kompilować na większości platformach uniksowych.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p0
+
 sed -e 's/build68kc/build68k/' -i src/Makefile.in
 
 %build
@@ -59,18 +65,18 @@ sed -e 's/build68kc/build68k/' -i src/Makefile.in
 %{__aclocal}
 %{__autoconf}
 %configure \
-	--enable-dga		\
-	--enable-vidmode	\
-	--enable-ui		\
-	--enable-threads	\
 	--disable-file-sound	\
-	--with-x		\
-	--without-svgalib	\
+	--enable-dga		\
+	--enable-threads	\
+	--enable-ui		\
+	--enable-vidmode	\
+	--without-asciiart	\
 	--without-sdl		\
 	--without-sdl-sound	\
 	--without-sdl-gfx	\
+	--without-svgalib	\
 	--with-alsa		\
-	--without-asciiart
+	--with-x
 
 %{__make}
 
@@ -79,8 +85,8 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_pixmapsdir},%{_desktopdir}}
 
 install readdisk uae $RPM_BUILD_ROOT%{_bindir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+cp -p %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
